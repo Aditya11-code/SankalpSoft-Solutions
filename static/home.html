@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SankalpSoft Solutions</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+   <body>
+
+     <!-- header part -->
+     <div id="first">
+       <a href="login" class="first">Log in <i class="fas fa-sign-in-alt"></i></a>
+
+     </div>
+     <div class="header">
+         <a href="#"> <img src="logo.png" alt="SankalpSoft Solutions" width="6%" style="margin-left:1%;"></a>
+         <span class="company">SankalpSoft Solutions</span>
+
+         <ul class="right">
+           <a href="home" class="links"><li> Home</li></a>
+           <a href="#" class="links"><li>Service</li></a>
+           <a href="#" class="links"><li>Products</li></a>
+           <a href="#" class="links"><li>Why we?</li></a>
+           <a href="#" class="links"><li>Blogs</li></a>
+           <a href="#" class="links"><li>Contact Us</li></a>
+         </ul>
+
+       </div>
+       <hr>
+
+
+       <!-- notification bar -->
+
+       <div class="noti-bar" id="noti-bar">
+         This is the notification bar designed using normal html and css to display notice and latest news regarding the company
+         <a href="#" class="close-noti" onclick="removeNotification()">&#10006;</a>
+       </div>
+
+       <!-- slideshow -->
+
+       <div class="slideshow-container">
+
+       <div class="mySlides">
+         <img src="../img1.jpg" class="slide-img" style="width:100%">
+       </div>
+
+       <div class="mySlides">
+         <img src="../img2.jpg" class="slide-img" style="width:100%">
+       </div>
+
+       <div class="mySlides">
+         <img src="../img3.jpg" class="slide-img" style="width:100%">
+       </div>
+
+       <div class="mySlides">
+         <img src="../img4.jpg" class="slide-img" style="width:100%">
+       </div>
+
+       <div class="mySlides">
+         <img src="../img5.jpg" class="slide-img" style="width:100%">
+       </div>
+
+       <div class="mySlides">
+         <img src="../img6.jpg" class="slide-img" style="width:100%">
+       </div>
+
+       </div>
+
+
+       <!-- feedback form -->
+       <div class="container">
+         <div class="big-card">
+           <div class="inside">
+           <div class="heading">
+             <span><h2>Feedback Form</h2></span>
+
+           </div>
+           <div class="details">
+             <form  action="/" method="post">
+               <input type="text" name="name"class="input" required placeholder="Your name">
+               <input type="tel" name="number" class="input adjust" minlength="10" maxlength="10" required placeholder="Your contact number">
+               <textarea name="message" rows="8" cols="80" class="input adjust" required placeholder="Your message" ></textarea>
+               <button type="submit" name="button" class="feedback-submit">send</button>
+             </form>
+
+           </div>
+         </div>
+           <div class="given-details">
+             Contact info<br>
+             123-456-7890
+           </div>
+
+         </div>
+
+       </div>
+
+
+       <!-- footer -->
+       <footer>
+         <hr>
+          <h4>&copy All rights resereved</h4>
+
+       </footer>
+
+  <script>
+
+    function removeNotification(){
+      document.getElementById('noti-bar').style.display = "none";
+    }
+
+  </script>
+  <script>
+  var slideNumber = 0;
+  slideShow();
+
+function slideShow() {
+  var i;
+  var numberOfSlides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < numberOfSlides.length; i++) {
+    numberOfSlides[i].style.display = "none";
+  }
+  slideNumber++;
+  if (slideNumber > numberOfSlides.length) {
+    slideNumber = 1
+  }
+  numberOfSlides[slideNumber-1].style.display = "block";
+
+  setTimeout(slideShow, 3000);
+}
+
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body{
+        background: rgb(252,252,252);
+      }
+    </style>
+  </head>
+   <body>
+     <div class="header">
+         <a href="#"> <img src="logo.png" alt="SankalpSoft Solutions" width="6%" style="margin-left:1%;"></a>
+         <span class="company">SankalpSoft Solutions</span>
+
+         <ul class="right">
+           <a href="/" class="links"><li> Home</li></a>
+           <a href="#" class="links"><li>Service</li></a>
+           <a href="#" class="links"><li>Products</li></a>
+           <a href="#" class="links"><li>Why we?</li></a>
+           <a href="#" class="links"><li>Blogs</li></a>
+           <a href="#" class="links"><li>Contact Us</li></a>
+         </ul>
+
+       </div>
+       <hr>
+       <div class="bar">
+         <ul>
+           <a href=""><li><i class="fas fa-rupee-sign icon" title="Salary"></i></li></a>
+           <a href=""><li><i class="fas fa-money-check-alt icon" title="Bonus"></i></li></a>
+           <a href=""><li><i class="fas fa-umbrella-beach icon" title="Holidays"></i></li></a>
+           <a href=""><li><i class="fas fa-thumbtack icon" title="Pending Tasks"></i></li></a>
+           <a href=""><li><i class="fas fa-tasks icon" title="Completed Tasks"></i></li></a>
+           <a href=""><li><i class="fas fa-user-cog icon" title="Settings"></i></li></a>
+         </ul>
+       </div>
+
+       <div class="card">
+         <div class="details">
+           <h1 class="welcome">Welcome User!</h1>
+           <h3>Name of the user</h3>
+           <h3>Post of the user</h3>
+           <h3>User Id</h3>
+           <h3>Joining Date</h3>
+         </div>
+         <div class="pic">
+           <h5>Display Pic</h5>
+         </div>
+
+
+       </div>
+
+
+       <div class="graph1">
+         PM1<input id="G1PM1" type="text" style="margin-right:10px;">
+         PM2<input id="G1PM2" type="text" style="margin-right:10px;">
+         PM3<input id="G1PM3" type="text" style="margin-right:10px;">
+         PM4<input  id="G1PM4" type="text" style="margin-right:10px;">
+         <input type="submit" value="Update" onclick="updateData1()">
+       <canvas id="myChart1" width="100" height="50"></canvas>
+       <h2>Individual Performance</h2>
+       </div>
+
+       <div class="graph2">
+         PM1:<input id="G2PM1" type="text" style="margin-right:10px;">
+         PM2:<input id="G2PM2" type="text" style="margin-right:10px;">
+         PM3:<input id="G2PM3" type="text" style="margin-right:10px;">
+         PM4:<input  id="G2PM4" type="text" style="margin-right:10px;">
+         <input type="submit" value="Update" onclick="updateData2()">
+       <canvas id="myChart2" width="100" height="50"></canvas>
+       <h2>Team Performance</h2>
+       </div>
+
+       <div class="graph3">
+       <canvas id="myChart3" width="100" height="50"></canvas>
+       <h2>Overall Performance</h2>
+       </div>
+
+       <footer>
+         <hr>
+          <h4>&copy All rights resereved</h4>
+
+       </footer>
+
+
+       <script type="text/javascript">
+
+       var ctx1 = document.getElementById("myChart1");
+       var myChart1 = new Chart(ctx1, {
+       type: 'bar',
+       data: {
+       	labels: ["PM1", "PM2" , "PM3" , "PM4"],
+       	datasets: [
+       	{
+       		data: [10,20,30,40],
+       		backgroundColor :['rgba(255, 99, 132, 0.2)',
+       				'rgba(54, 162, 235, 0.2)',
+       				'rgba(255, 206, 86, 0.2)',
+       				'rgba(75, 192, 192, 0.2)'
+       ],
+
+       borderColor: [
+       				'rgba(255,99,132,1)',
+       				'rgba(54, 162, 235, 1)',
+       				'rgba(255, 206, 86, 1)',
+       				'rgba(75, 192, 192, 1)'
+       			],
+       borderWidth : 1
+       	}
+       	]
+       },
+       options: {
+       		scales: {
+       			yAxes: [{
+       				ticks: {
+       					beginAtZero:true
+       				}
+       			}]
+       		}
+       	}
+       });
+
+       document.getElementById('G1PM1').setAttribute('value',myChart1.data.datasets[0].data[0]);
+       document.getElementById('G1PM2').setAttribute('value',myChart1.data.datasets[0].data[1]);
+       document.getElementById('G1PM3').setAttribute('value',myChart1.data.datasets[0].data[2]);
+       document.getElementById('G1PM4').setAttribute('value',myChart1.data.datasets[0].data[3]);
+
+       function updateData1(){
+         myChart1.data.datasets[0].data[0]=document.getElementById('G1PM1').value;
+         myChart1.data.datasets[0].data[1]=document.getElementById('G1PM2').value;
+         myChart1.data.datasets[0].data[2]=document.getElementById('G1PM3').value;
+         myChart1.data.datasets[0].data[3]=document.getElementById('G1PM4').value;
+         myChart1.update();
+         updateData3();
+       }
+       	</script>
+
+
+        <script type="text/javascript">
+
+        var ctx2 = document.getElementById("myChart2");
+        var myChart2 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+         labels: ["PM1", "PM2" , "PM3" , "PM4"],
+         datasets: [
+         {
+           data: [40,30,20,10],
+           backgroundColor :['rgba(255, 99, 132, 0.2)',
+               'rgba(54, 162, 235, 0.2)',
+               'rgba(255, 206, 86, 0.2)',
+               'rgba(75, 192, 192, 0.2)'
+        ],
+
+        borderColor: [
+               'rgba(255,99,132,1)',
+               'rgba(54, 162, 235, 1)',
+               'rgba(255, 206, 86, 1)',
+               'rgba(75, 192, 192, 1)'
+             ],
+        borderWidth : 1
+         }
+         ]
+        },
+        options: {
+           scales: {
+             yAxes: [{
+               ticks: {
+                 beginAtZero:true
+               }
+             }]
+           }
+         }
+
+        });
+
+        document.getElementById('G2PM1').setAttribute('value',myChart2.data.datasets[0].data[0]);
+        document.getElementById('G2PM2').setAttribute('value',myChart2.data.datasets[0].data[1]);
+        document.getElementById('G2PM3').setAttribute('value',myChart2.data.datasets[0].data[2]);
+        document.getElementById('G2PM4').setAttribute('value',myChart2.data.datasets[0].data[3]);
+
+        function updateData2(){
+          myChart2.data.datasets[0].data[0]=document.getElementById('G2PM1').value;
+          myChart2.data.datasets[0].data[1]=document.getElementById('G2PM2').value;
+          myChart2.data.datasets[0].data[2]=document.getElementById('G2PM3').value;
+          myChart2.data.datasets[0].data[3]=document.getElementById('G2PM4').value;
+          myChart2.update();
+          updateData3();
+        }
+
+         </script>
+
+
+
+         <script type="text/javascript">
+
+         var ctx3 = document.getElementById("myChart3");
+         var myChart3 = new Chart(ctx3, {
+         type: 'bar',
+         data: {
+         	labels: ["PM1", "PM2" , "PM3" , "PM4"],
+         	datasets: [
+         	{
+         		data: [25,25,25,25],
+         		backgroundColor :['rgba(255, 99, 132, 0.2)',
+         				'rgba(54, 162, 235, 0.2)',
+         				'rgba(255, 206, 86, 0.2)',
+         				'rgba(75, 192, 192, 0.2)'
+         ],
+
+         borderColor: [
+         				'rgba(255,99,132,1)',
+         				'rgba(54, 162, 235, 1)',
+         				'rgba(255, 206, 86, 1)',
+         				'rgba(75, 192, 192, 1)'
+         			],
+         borderWidth : 1
+         	}
+         	]
+         },
+         options: {
+         		scales: {
+         			yAxes: [{
+         				ticks: {
+         					beginAtZero:true
+         				}
+         			}]
+         		}
+         	}
+
+         });
+
+
+         function updateData3(){
+           myChart3.data.datasets[0].data[0]= (parseInt(document.getElementById('G2PM1').value) + parseInt(document.getElementById('G1PM1').value) ) / 2 ;
+           myChart3.data.datasets[0].data[1]=(parseInt(document.getElementById('G2PM2').value) + parseInt(document.getElementById('G1PM2').value) ) / 2 ;
+           myChart3.data.datasets[0].data[2]= (parseInt(document.getElementById('G2PM3').value) + parseInt(document.getElementById('G1PM3').value) ) / 2 ;
+           myChart3.data.datasets[0].data[3]= (parseInt(document.getElementById('G2PM4').value) + parseInt(document.getElementById('G1PM4').value) ) / 2 ;
+           myChart3.update();
+
+         }
+         	</script>
+
+       </body>
+    </html>
