@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+  </head>
+   <body>
+     <div class="header">
+         <a href="#"> <img src="logo.png" alt="SankalpSoft Solutions" width="6%" style="margin-left:1%;"></a>
+         <span class="company">SankalpSoft Solutions</span>
+
+         <ul class="right">
+           <a href="/" class="links"><li> Home</li></a>
+           <a href="#" class="links"><li>Service</li></a>
+           <a href="#" class="links"><li>Products</li></a>
+           <a href="#" class="links"><li>Why we?</li></a>
+           <a href="#" class="links"><li>Blogs</li></a>
+           <a href="#" class="links"><li>Contact Us</li></a>
+         </ul>
+
+       </div>
+       <hr>
+
+
+      <!-- login form -->
+      <div class="form-container">
+        <form class="form" action="/login" method="post">
+          <img src="user.jpg" alt="login" class="user-img">
+          <input type="email" name="name" class="login-det above" required placeholder="Username"><br>
+          <input type="password" name="password" class="login-det" required placeholder="Password"><br>
+          <a href="#"class="forgot">Forgot Password ?</a>
+          <input type="submit"class="login-btn" value="Log in">
+          <span class="wrong-det"><%= message %></span>
+        </form>
+      </div>
+
+
+
+      <!-- footer -->
+      <footer style="padding-top:0%;">
+        <hr>
+         <h4>&copy All rights resereved</h4>
+
+      </footer>
+
+
+  </body>
+</html>
